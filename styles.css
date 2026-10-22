@@ -78,3 +78,15 @@ header .theme-toggle{grid-column:3;grid-row:1}
 .name-line .eyebrow{margin:0}
 
 .prior-employer .career-timeline{margin-top:28px}
+
+/* Full-width surfaces with a centered reading column. */
+header,main,footer{max-width:none;width:100%}
+header{padding-inline:max(24px,calc((100% - 1052px)/2))}
+.hero{padding-inline:max(30px,calc((100% - 1040px)/2))}
+.section{padding-inline:max(30px,calc((100% - 1040px)/2))}
+.contact,footer{padding-inline:max(30px,calc((100% - 1040px)/2))}
+.hero-bottom{position:relative;border-top:0}
+.hero-bottom::before{content:"";position:absolute;top:0;left:calc((1040px - 100vw)/2);right:calc((1040px - 100vw)/2);height:1px;background:var(--line);pointer-events:none}
+@media(max-width:1100px){.hero-bottom::before{left:-30px;right:-30px}}
+@media(max-width:700px){header{padding-inline:16px}.hero,.section,.contact,footer{padding-inline:20px}.hero-bottom::before{left:-20px;right:-20px}}
+@media print{header,main,footer{width:auto}.hero,.section,.contact,footer{padding-inline:0}.hero-bottom::before{display:none}}
